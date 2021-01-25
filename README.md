@@ -54,6 +54,12 @@ __
 <br/>
 **Expect:** travelBook.findPlace(id).toEqual(place{id: id})
 
+**Describe:** travelBook.prototype.removePlace();
+<br/>
+**Test:** To remove a place from the travel book
+<br/>
+**Expect:** travelBook.removePlace(id).toEqual(travelbook{places{id, id, id} - id })
+
 ## Setup/Installation Requirements
 
 ### Local Machine

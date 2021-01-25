@@ -9,14 +9,6 @@ TravelBook.prototype.assignPlacesID = function(place) {
   return this.currentId;
 }
 
-// Business Logic for Places
-function Places(location, landmarks, date, flower) {
-  this.location = location;
-  this.landmarks = landmarks;
-  this.date = date;
-  this.flower = flower;
-}
-
 TravelBook.prototype.addPlace = function(place) {
   place.id = this.assignPlacesID();
   this.places[place.id] = place;  
@@ -27,6 +19,22 @@ TravelBook.prototype.findPlace = function(id){
     return this.places[id];
   }
   return false;
+}
+
+TravelBook.prototype.removePlace = function(id){
+  if (this.places[id] === undefined) {
+    return false;
+  }
+  delete this.places[id];
+  return true
+}
+
+// Business Logic for Places
+function Places(location, landmarks, date, flower) {
+  this.location = location;
+  this.landmarks = landmarks;
+  this.date = date;
+  this.flower = flower;
 }
 
 
