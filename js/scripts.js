@@ -9,6 +9,10 @@ function Places(location, landmarks, date, flower) {
   this.flower = flower;
 }
 
+TravelBook.prototype.addPlace = function(place){
+  this.places[place.location] = place;
+}
+
 
 
 
