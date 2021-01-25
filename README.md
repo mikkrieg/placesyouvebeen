@@ -42,6 +42,12 @@ __
 </br>
 **Expect:** travelbook.addPlace(place).toEqual(travelbook{places: {place}});
 
+**Describe:** travelBook.prototype.addPlace()
+<br/>
+**Test:** Add numerical ID's to each place
+</br>
+**Expect:** travelbook.addPlace(place).toEqual(travelbook{places: {1: place{}});
+
 ## Setup/Installation Requirements
 
 ### Local Machine
