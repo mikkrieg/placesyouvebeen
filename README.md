@@ -48,6 +48,12 @@ __
 </br>
 **Expect:** travelbook.addPlace(place).toEqual(travelbook{places: {1: place{}});
 
+**Describe:** travelBook.prototype.findPlace();
+<br/>
+**Test:** To find a place in the Travel Book
+<br/>
+**Expect:** travelBook.findPlace(id).toEqual(place{id: id})
+
 ## Setup/Installation Requirements
 
 ### Local Machine

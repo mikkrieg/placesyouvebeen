@@ -19,15 +19,15 @@ function Places(location, landmarks, date, flower) {
 
 TravelBook.prototype.addPlace = function(place) {
   place.id = this.assignPlacesID();
-  this.places[place.id] = place;
+  this.places[place.id] = place;  
 }
 
-
-
-
-
-
-
+TravelBook.prototype.findPlace = function(id){
+  if(this.places[id] != undefined){
+    return this.places[id];
+  }
+  return false;
+}
 
 
 
