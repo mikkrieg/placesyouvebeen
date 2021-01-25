@@ -1,3 +1,7 @@
+function TravelBook() {
+  this.places = {};
+}
+
 function Places(location, landmarks, date, flower) {
   this.location = location;
   this.landmarks = landmarks;

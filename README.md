@@ -28,6 +28,19 @@ __
 **Test:** Will create place objects
 <br/>
 **Expect:** Places("Portland", "bridges", "1/25/2021", "Roses").toEqual(place {location:"Portland", landmarks:"bridges", date: "1/25/2021", flower: "Roses"};)
+<br/>
+
+**Describe:** travelBook()
+<br/>
+**Test:** Create Travel Book object
+</br>
+**Expect:** travelBook().toEqual(travelBook{places: {}});
+
+**Describe:** travelBook.prototype.addPlace()
+<br/>
+**Test:** Add places to our travelBook
+</br>
+**Expect:** travelbook.addPlace(place).toEqual(travelbook{places: {place}});
 
 ## Setup/Installation Requirements
 
