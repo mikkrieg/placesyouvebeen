@@ -51,7 +51,33 @@ function displayPlaces(travelBookToDisplay){
   placesList.html(htmlForPlaceInfo);
 }
 
+function showPlace(placeId){
+  const place = travelBook.findPlace(placeId);
+  $('div#show-place').show();
+  $("span.location").html(place.location);
+  $("span.landmark").html(place.landmarks);
+  $("span.date").html(place.date);
+  $("span.flower").html(place.flower);
+
+  let buttons = $("div#buttons");
+  buttons.empty();
+  buttons.append("<button class='deleteButton' id=" + place.id + ">Delete</button>");
+}
+
+function attachPlaceListeners(){
+  $('ul#places').on("click", "li", function(){
+    showPlace(this.id);
+  });
+
+  $('div#buttons').on("click", ".deleteButton", function(){
+    travelBook.removePlace(this.id);
+    $('div#show-place').hide();
+    displayPlaces(travelBook);
+  })
+}
+
 $(document).ready(function(){
+  attachPlaceListeners();
   $('form#new-place').submit(function(e){
     e.preventDefault();
 
@@ -59,6 +85,10 @@ $(document).ready(function(){
     const inputtedLandMark = $('input#new-landmark').val();
     const inputtedDate= $('input#new-date').val();
     const inputtedFlower = $('input#new-flower').val();
+
+    $("input#new-first-name").val("");
+    $("input#new-last-name").val("");
+    $("input#new-phone-number").val("");
 
     let newPlace = new Place(inputtedLocation, inputtedLandMark, inputtedDate, inputtedFlower);
 
