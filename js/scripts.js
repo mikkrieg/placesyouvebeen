@@ -30,7 +30,7 @@ TravelBook.prototype.removePlace = function(id){
 }
 
 // Business Logic for Places
-function Places(location, landmarks, date, flower) {
+function Place(location, landmarks, date, flower) {
   this.location = location;
   this.landmarks = landmarks;
   this.date = date;
@@ -38,7 +38,32 @@ function Places(location, landmarks, date, flower) {
 }
 
 
+// User Interface Logic
+let travelBook = new TravelBook();
+
+function displayPlaces(travelBookToDisplay){
+  let placesList = $('ul#places');
+  let htmlForPlaceInfo = "";
+  Object.keys(travelBookToDisplay.places).forEach(function(key){
+    const place = travelBookToDisplay.findPlace(key);
+    htmlForPlaceInfo += "<li id=" + place.id + ">" + place.location + "</li>";
+  });
+  placesList.html(htmlForPlaceInfo);
+}
 
 $(document).ready(function(){
+  $('form#new-place').submit(function(e){
+    e.preventDefault();
 
+    const inputtedLocation = $('input#new-location').val();
+    const inputtedLandMark = $('input#new-landmark').val();
+    const inputtedDate= $('input#new-date').val();
+    const inputtedFlower = $('input#new-flower').val();
+
+    let newPlace = new Place(inputtedLocation, inputtedLandMark, inputtedDate, inputtedFlower);
+
+    travelBook.addPlace(newPlace);
+    displayPlaces(travelBook);
+    
+  });
 });

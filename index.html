@@ -11,7 +11,35 @@
   </head>
   <body>
     <div class="container">
-      
+      <h1>Travel Book</h1>
+      <h2>Add a place you've been:</h2>
+
+      <form id="new-place">
+        <label for="new-location">Location</label>
+        <input type="text" id="new-location">
+        <br>
+        <label for="new-landmark">Landmark</label>
+        <input type="text" id="new-landmark">
+        <br>
+        <label for="new-date">Date Visited</label>
+        <input type="text" id="new-date">
+        <br>
+        <label for="new-flower">Flower</label>
+        <input type="text" id="new-flower">
+        <br>
+        <button type="submit">Add!</button>
+      </form>
+
+      <h2>Places:</h2>
+      <ul id="places">
+      </ul>
+
+      <div id="show-place">
+        <p>Location: <span class="location"></span></p>
+        <p>Landmark: <span class="landmark"></span></p>
+        <p>Date: <span class="date"></span></p>
+        <p>Flower: <span class="flower"></span></p>
+      </div>
     </div>
   </body>
 </html>
